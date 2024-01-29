@@ -48,6 +48,12 @@ cd source
 composer install
 ```
 
+### Environment setting
+
+- Copy & rename either `env.dev`, `env.staging`, or `env.prod` to `.env`.
+- Modify as needed
+- Confirm the currently active environment with `./spark env`
+
 ### Running the starter template
 
 ```
