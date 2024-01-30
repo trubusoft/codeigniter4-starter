@@ -23,12 +23,14 @@ php -v
 
 ### Installing Required PHP Module for CI4
 
+- `mysql`: for connecting with MySQL
 - `curl`: for composer
 - `intl`: for CI4
 - `dom`: for PHPUnit
 - `mbstring`: for PHPUnit
 
 ```
+sudo apt install php8.3-mysql
 sudo apt install php8.3-curl
 sudo apt install php8.3-intl
 sudo apt install php8.3-dom
