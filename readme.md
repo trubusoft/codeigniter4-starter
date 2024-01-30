@@ -23,12 +23,14 @@ php -v
 
 ### Installing Required PHP Module for CI4
 
+- `mysql`: for connecting with MySQL
 - `curl`: for composer
 - `intl`: for CI4
 - `dom`: for PHPUnit
 - `mbstring`: for PHPUnit
 
 ```
+sudo apt install php8.3-mysql
 sudo apt install php8.3-curl
 sudo apt install php8.3-intl
 sudo apt install php8.3-dom
@@ -59,18 +61,30 @@ cd source
 composer install
 ```
 
-### Environment setting
-
-- Copy & rename either `env.dev`, `env.staging`, or `env.prod` to `.env`.
-- Modify as needed
-- Confirm the currently active environment with `./spark env`
-
 ### Running the starter template
+
+Try running the bare minimum settings now with:
 
 ```
 cd source
 ./spark serve
 ```
+
+A page should now be served at `http://localhost:8080/`.
+
+If you can see the page, then CodeIgniter 4  related modules & packages have been installed successfully.
+
+## Development Configuration
+
+### Environment setting
+
+- Copy & rename `env.dev` to `.env`.
+- Modify as needed
+- Confirm the currently active environment with `./spark env`. It should now shows `development` instead of `production`.
+
+### Debugging
+- Use the provided [Debug Toolbar](https://codeigniter4.github.io/userguide/tutorial/index.html#debug-toolbar)
+- Error logs will be printed on `writable/logs`
 
 ## Useful external resources
 - 25 minutes of [basic MVC in CodeIgniter 4](https://youtu.be/c8zHxE-mN4c?si=pNoCCJwCjGoRfYQp)
