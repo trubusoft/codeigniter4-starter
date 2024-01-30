@@ -55,3 +55,5 @@ cd source
 ./spark serve
 ```
 
+## Useful external resources
+- 25 minutes of [basic MVC in CodeIgniter 4](https://youtu.be/c8zHxE-mN4c?si=pNoCCJwCjGoRfYQp)
