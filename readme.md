@@ -37,6 +37,17 @@ sudo apt install php8.3-mbstring
 
 Check that above modules exist by running `php -m`.
 
+#### Optional PHP Modules
+
+Should only be installed if required, or any error occurred that mentions them.
+
+- `sqlite3`: for CI4 default testing with sqlite3 database
+
+```
+sudo apt install php8.3-sqlite3
+```
+
+
 ### Installing Composer
 
 Refer to: https://getcomposer.org/download/
