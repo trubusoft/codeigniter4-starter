@@ -82,6 +82,29 @@ If you can see the page, then CodeIgniter 4  related modules & packages have bee
 - Modify as needed
 - Confirm the currently active environment with `./spark env`. It should now shows `development` instead of `production`.
 
+### Spin up MySQL Database
+
+The provided [docker-compose.yml](docker-compose.yml) will spin up 2 database (main and test).
+
+```
+docker compose up -d
+```
+
+### Run the development session
+
+```
+cd source
+./spark serve
+```
+
+Alternatively, you can also use [bitnami/codeigniter](https://hub.docker.com/r/bitnami/codeigniter) instead of spark.
+
+### Testing
+```
+cd source
+composer run-script test
+```
+
 ### Debugging
 - Use the provided [Debug Toolbar](https://codeigniter4.github.io/userguide/tutorial/index.html#debug-toolbar)
 - Error logs will be printed on `writable/logs`
