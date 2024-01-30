@@ -1,0 +1,24 @@
+version: '3.7'
+
+services:
+  db-main:
+    image: mysql
+    volumes:
+      - main_mysql_data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=main
+    ports:
+      - "3310:3306"
+  db-test:
+    image: mysql
+    volumes:
+      - test_mysql_data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=test
+    ports:
+      - "3311:3306"
+volumes:
+  main_mysql_data:
+  test_mysql_data:
