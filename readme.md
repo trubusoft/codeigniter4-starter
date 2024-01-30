@@ -4,7 +4,7 @@ Starter template for CodeIgniter 4.4.5 on Ubuntu 20.04 LTS
 
 ## Folder Structure
 
-- `deployments`: various deployments configuration (e.g. kubernetes config for both staging and production)
+- `configurations`: various development/deployment configurations (e.g. docker/kubernetes config for dev, staging, and production)
 - `documents`: all files that not directly related to the code and will not be included inside source image (e.g. requirements, notes, diagram)
 - `source`: root folder for the CI4 project
 
