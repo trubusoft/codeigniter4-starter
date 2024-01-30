@@ -74,5 +74,9 @@ cd source
 ./spark serve
 ```
 
+## Debugging
+- Use provided [Debug Toolbar](https://codeigniter4.github.io/userguide/tutorial/index.html#debug-toolbar)
+- Error logs will be printed on `writable/logs`
+
 ## Useful external resources
 - 25 minutes of [basic MVC in CodeIgniter 4](https://youtu.be/c8zHxE-mN4c?si=pNoCCJwCjGoRfYQp)
