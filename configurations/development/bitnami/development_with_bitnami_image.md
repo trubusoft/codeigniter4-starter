@@ -5,7 +5,7 @@ Bitnami offers [CodeIgniter development image](https://hub.docker.com/r/bitnami/
 There are some compromises: as per this time of writing, there are some points of discrepancy in the documentations.
 We found little to no online answer to issue that we've faced. Plus, the image is close-sourced.
 
-This file attempt to document the configuration that has been working for us.
+The purpose of this file is to document list configurations that have been working for us.
 
 ## Configuration without database
 
