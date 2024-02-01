@@ -73,9 +73,9 @@ The site should now be served at `localhost:8000`.
 
 ## Other Note
 
-Command can be executed inside the `codeigniter4` container with `docker exec` 
+Command can be executed inside the `codeigniter4` container using `docker exec` 
 with `/app/<PROJECT_NAME>` as the working directory.
-The `PROJECT_NAME` may vary according to what are supplied as `CODEIGNITER_PROJECT_NAME` inside the compose file.
+The `PROJECT_NAME` may vary according to what is being supplied as `CODEIGNITER_PROJECT_NAME` inside the compose file.
 
 For example, to get the list of all installed PHP Modules:
 
