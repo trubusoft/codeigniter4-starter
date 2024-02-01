@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  codeigniter4:
+    image: bitnami/codeigniter:4.4.5
+    container_name: codeigniter4
+    environment:
+      - CODEIGNITER_PROJECT_NAME=starter-ci4
+      - CODEIGNITER_PORT_NUMBER=8000
+      - CODEIGNITER_SKIP_DATABASE=yes
+      - ALLOW_EMPTY_PASSWORD=yes
+    volumes:
+      - ${PWD}/source:/app/starter-ci4
+    ports:
+      - "8000:8000"
