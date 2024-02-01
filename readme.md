@@ -92,12 +92,14 @@ docker compose up -d
 
 ### Run the development session
 
+You can start the development session with the built-in `spark`:
 ```
 cd source
 ./spark serve
 ```
 
-Alternatively, you can also use [bitnami/codeigniter](https://hub.docker.com/r/bitnami/codeigniter) instead of spark.
+Alternative to the `spark`, you can also use [bitnami/codeigniter](https://hub.docker.com/r/bitnami/codeigniter) image instead.
+For this, please refer to [development_with_bitnami_image.md](configurations/development/bitnami/development_with_bitnami_image.md).
 
 ### Testing
 ```
