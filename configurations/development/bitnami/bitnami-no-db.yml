@@ -10,6 +10,8 @@ services:
       - CODEIGNITER_SKIP_DATABASE=yes
       - ALLOW_EMPTY_PASSWORD=yes
     volumes:
+      # Place this yaml at the root of this project,
+      # or update below line to correctly points the /source
       - ${PWD}/source:/app/starter-ci4
     ports:
       - "8000:8000"
