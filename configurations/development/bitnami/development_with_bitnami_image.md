@@ -7,7 +7,7 @@ We found little to no online answer to issue that we've faced. Plus, the image i
 
 This file attempt to document the configuration that has been working for us.
 
-## No database configuration
+## Configuration without database
 
 The [bitnami-no-db.yml](bitnami-no-db.yml) is the bare minimum configuration that you can run.
 The composed container will not have access to database.
@@ -23,8 +23,25 @@ The `compose` will mount `/source` at the working directory of the container.
 Now, try to open the development session at `localhost:8000`.
 
 
-For debugging, you should be able to find this line inside the docker logs:
+For debugging, you should also be able to find this line inside the docker logs:
 
 ```
 codeigniter4  | codeigniter 03:41:23.82 INFO  ==> An existing project was detected, skipping project creation
+```
+
+This confirms that the `/source` has been mounted correctly, 
+and that `bitnami/codeigniter` use the provided source code
+instead of bootstrapping another new one.
+
+## Configuration with MySQL database
+
+
+
+## Others
+
+Command can be executed inside the `codeigniter4` container with `docker exec`.
+For example:
+
+```
+docker exec -w /app/starter-ci4/ codeigniter4 php -v
 ```
