@@ -13,5 +13,18 @@ The [bitnami-no-db.yml](bitnami-no-db.yml) is the bare minimum configuration tha
 The composed container will not have access to database.
 This is useful to try/test codeigniter with the starter template we've provided.
 
-The composer will mount `/source` at the working directory of the container.
-Upon starting, you can open the development session at `localhost:8000`.
+Place this configuration file on the source root of this project, and run:
+
+```
+docker compose -f bitnami-no-db.yml up -d
+```
+
+The `compose` will mount `/source` at the working directory of the container.
+Now, try to open the development session at `localhost:8000`.
+
+
+For debugging, you should be able to find this line inside the docker logs:
+
+```
+codeigniter4  | codeigniter 03:41:23.82 INFO  ==> An existing project was detected, skipping project creation
+```
