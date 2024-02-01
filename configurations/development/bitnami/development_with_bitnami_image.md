@@ -71,7 +71,7 @@ The test should be succeeded without any error.
 The site should now be served at `localhost:8000`.
 
 
-## Others
+## Other Note
 
 Command can be executed inside the `codeigniter4` container with `docker exec` 
 with `/app/<PROJECT_NAME>` as the working directory.
