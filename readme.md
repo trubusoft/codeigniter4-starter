@@ -98,7 +98,8 @@ cd source
 ./spark serve
 ```
 
-Alternative to the `spark`, you can also use [bitnami/codeigniter](https://hub.docker.com/r/bitnami/codeigniter) image instead.
+The [bitnami/codeigniter](https://hub.docker.com/r/bitnami/codeigniter) image can also be used instead 
+as an alternative to the `spark`. 
 For this, please refer to [development_with_bitnami_image.md](configurations/development/bitnami/development_with_bitnami_image.md).
 
 ### Testing
