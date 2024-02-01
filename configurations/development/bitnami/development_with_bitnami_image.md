@@ -37,6 +37,10 @@ The site should now be served at `localhost:8000`.
 
 ## Configuration with MySQL database
 
+This configuration will make both `db-main` and `db-test` container accessible to the 
+code igniter development image. 
+Both of the databases can still be accessed from host (e.g. using MySQL Client).
+
 First, change the content of [docker-compose.yml](../../../docker-compose.yml) on the root of the project with [bitnami-with-db.yml](bitnami-with-db.yml).
 
 Update your `.env` file to adjust the hostname and port for both main and the test database:
