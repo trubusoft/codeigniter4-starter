@@ -1,0 +1,52 @@
+# Place this yaml at the root of this repo.
+
+version: '3.7'
+
+services:
+  codeigniter4:
+    image: bitnami/codeigniter:4.4.5
+    container_name: codeigniter4
+    environment:
+      - CODEIGNITER_PROJECT_NAME=starter-ci4
+      - CODEIGNITER_PORT_NUMBER=8000
+      - CODEIGNITER_DATABASE_HOST=db-main
+      - CODEIGNITER_DATABASE_PORT_NUMBER=3306
+      - CODEIGNITER_DATABASE_PASSWORD=root
+      - CODEIGNITER_DATABASE_USER=root
+      - CODEIGNITER_DATABASE_NAME=main
+    volumes:
+      - ${PWD}/source:/app/starter-ci4
+    depends_on:
+      - db-main
+      - db-test
+    ports:
+      - "8000:8000"
+    networks:
+      - codeigniter_network
+  db-main:
+    image: mysql
+    volumes:
+      - main_mysql_data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=main
+    ports:
+      - "3310:3306"
+    networks:
+      - codeigniter_network
+  db-test:
+    image: mysql
+    volumes:
+      - test_mysql_data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=test
+    ports:
+      - "3311:3306"
+    networks:
+      - codeigniter_network
+volumes:
+  main_mysql_data:
+  test_mysql_data:
+networks:
+  codeigniter_network:

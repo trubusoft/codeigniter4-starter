@@ -33,14 +33,47 @@ This confirms that the `/source` has been mounted correctly,
 and that `bitnami/codeigniter` use the provided source code
 instead of bootstrapping another new one.
 
+The site should now be served at `localhost:8000`.
+
 ## Configuration with MySQL database
 
+First, change the content of [docker-compose.yml](../../../docker-compose.yml) on the root of the project with [bitnami-with-db.yml](bitnami-with-db.yml).
+
+Update your `.env` file to adjust the hostname and port for both main and the test database:
+
+```
+database.default.hostname = db-main
+database.default.port = 3306
+
+database.tests.hostname = db-test
+database.tests.port = 3306
+```
+
+Spin up the compose file:
+
+```
+docker compose up -d
+```
+
+Confirms that your `codeigniter4` container can connect with the MySQL container
+by running the test command:
+
+```
+docker exec -w /app/starter-ci4/ codeigniter4 composer run-script test
+```
+
+The test should be succeeded without any error.
+
+The site should now be served at `localhost:8000`.
 
 
 ## Others
 
-Command can be executed inside the `codeigniter4` container with `docker exec`.
-For example:
+Command can be executed inside the `codeigniter4` container with `docker exec` 
+with `/app/<PROJECT_NAME>` as the working directory.
+The `PROJECT_NAME` may vary according to what are supplied as `CODEIGNITER_PROJECT_NAME` inside the compose file.
+
+For example, to get the list of all installed PHP Modules:
 
 ```
 docker exec -w /app/starter-ci4/ codeigniter4 php -v
