@@ -80,7 +80,7 @@ If you can see the page, then CodeIgniter 4  related modules & packages have bee
 
 - Copy & rename `env.dev` to `.env`.
 - Modify as needed
-- Confirm the currently active environment with `./spark env`. It should now shows `development` instead of `production`.
+- Confirm the currently active environment with `./spark env`. It should now show `development` instead of `production`.
 
 ### Spin up MySQL Database
 
