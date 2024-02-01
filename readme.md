@@ -80,7 +80,7 @@ If you can see the page, then CodeIgniter 4  related modules & packages have bee
 
 - Copy & rename `env.dev` to `.env`.
 - Modify as needed
-- Confirm the currently active environment with `./spark env`. It should now shows `development` instead of `production`.
+- Confirm the currently active environment with `./spark env`. It should now show `development` instead of `production`.
 
 ### Spin up MySQL Database
 
@@ -92,12 +92,15 @@ docker compose up -d
 
 ### Run the development session
 
+You can start the development session with the built-in `spark`:
 ```
 cd source
 ./spark serve
 ```
 
-Alternatively, you can also use [bitnami/codeigniter](https://hub.docker.com/r/bitnami/codeigniter) instead of spark.
+The [bitnami/codeigniter](https://hub.docker.com/r/bitnami/codeigniter) image can also be used instead 
+as an alternative to the `spark`. 
+For this, please refer to [development_with_bitnami_image.md](configurations/development/bitnami/development_with_bitnami_image.md).
 
 ### Testing
 ```
