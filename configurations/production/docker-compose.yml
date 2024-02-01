@@ -1,0 +1,23 @@
+# Place this at root folder of this repo
+
+version: '3.7'
+
+services:
+  fpm:
+    container_name: fpm
+    build:
+      context: ./source
+    volumes:
+      - source-code:/var/www
+    ports:
+      - "9000:9000"
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    volumes:
+      - ./configurations/production/nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - source-code:/var/www
+    ports:
+      - "9001:80"
+volumes:
+  source-code:

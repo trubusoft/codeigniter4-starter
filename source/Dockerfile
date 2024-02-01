@@ -4,8 +4,6 @@ FROM php:8.3.2-fpm
 
 WORKDIR /var/www
 
-COPY . codeigniter4
-
 RUN apt-get update && \
     apt-get install -y \
     git \
@@ -15,8 +13,9 @@ RUN apt-get update && \
 RUN docker-php-ext-install pdo_mysql
 RUN docker-php-ext-install mysqli
 
-# may not be necessary
-# RUN docker-php-ext-enable pdo_mysql
+COPY . codeigniter4
+
+RUN chmod -R 755 codeigniter4/writable/
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
