@@ -9,13 +9,18 @@ services:
       context: ./source
     environment:
       - CI_ENVIRONMENT=production
-      - database.default.hostname = db-main
-      - database.default.database = main
-      - database.default.username = root
-      - database.default.password = root
-      - database.default.DBDriver = MySQLi
-      - database.default.DBPrefix =
-      - database.default.port = 3310
+      - DB_DEFAULT_HOSTNAME=db-main
+      - DB_DEFAULT_DATABASE=main
+      - DB_DEFAULT_USERNAME=root
+      - DB_DEFAULT_PASSWORD=root
+      - DB_DEFAULT_DBDRIVER=MySQLi
+      - DB_DEFAULT_PORT=3306
+      - DB_TESTS_HOSTNAME=db-test
+      - DB_TESTS_DATABASE=test
+      - DB_TESTS_USERNAME=root
+      - DB_TESTS_PASSWORD=root
+      - DB_TESTS_DBDRIVER=MySQLi
+      - DB_TESTS_PORT=3306
     volumes:
       - source-code:/var/www
   nginx:
