@@ -112,5 +112,11 @@ composer run-script test
 - Use the provided [Debug Toolbar](https://codeigniter4.github.io/userguide/tutorial/index.html#debug-toolbar)
 - Error logs will be printed on `writable/logs`
 
+## Production Configuration
+
+This repo offers a working configuration for serving the source code on a production environment
+with PHP-FPM and NGINX. 
+More about this can be found at [production.md](configurations/production/production.md).
+
 ## Useful external resources
 - 25 minutes of [basic MVC in CodeIgniter 4](https://youtu.be/c8zHxE-mN4c?si=pNoCCJwCjGoRfYQp)
