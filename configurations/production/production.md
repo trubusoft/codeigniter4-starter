@@ -25,10 +25,10 @@ docker build -t my-application:1
 The source code will be copied inside the official [PHP-FPM Image](https://hub.docker.com/_/php).
 
 ### Passing environment variables
+The `/source/.env` file will be ignored when creating the image.
+Please use the appropriate way from the stack you've picked to pass an environment variables.
 
-Don't hardcode the environment variables inside the `.env` file, as it will be ignored when creating the image.
-
-For example, use this instead in docker compose:
+For example, in docker compose you would do it like this:
 
 ```
 services:
@@ -44,7 +44,7 @@ services:
       - database.default.port = 3310
 ```
 
-In Kubernetes, insert them inside the specification and mix with `ConfigMap` or `Secret` as necessary.
+In Kubernetes, insert them inside the specification and mix the usage with `ConfigMap` or `Secret` as necessary.
 
 ## Preparing the NGINX
 
