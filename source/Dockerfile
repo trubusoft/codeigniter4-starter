@@ -13,7 +13,11 @@ RUN docker-php-ext-install pdo_mysql
 RUN docker-php-ext-install mysqli
 RUN docker-php-ext-install intl
 
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
 COPY . codeigniter4
+
+RUN cd codeigniter4 && composer install
 
 RUN chown -R www-data:www-data codeigniter4/
 RUN chmod -R 755 codeigniter4/writable/
