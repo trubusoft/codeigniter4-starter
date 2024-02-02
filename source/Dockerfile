@@ -18,6 +18,7 @@ RUN docker-php-ext-install intl
 
 COPY . codeigniter4
 
+RUN chown -R www-data:www-data codeigniter4/
 RUN chmod -R 755 codeigniter4/writable/
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
