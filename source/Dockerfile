@@ -1,5 +1,3 @@
-# Warning: this is still a template script and hasn't been tested yet
-
 FROM php:8.3.2-fpm
 
 WORKDIR /var/www
@@ -13,7 +11,6 @@ RUN apt-get update && \
 
 RUN docker-php-ext-install pdo_mysql
 RUN docker-php-ext-install mysqli
-
 RUN docker-php-ext-install intl
 
 COPY . codeigniter4
