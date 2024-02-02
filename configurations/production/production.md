@@ -49,7 +49,13 @@ In Kubernetes, insert them inside the specification and mix the usage with `Conf
 ## Preparing the NGINX
 
 The [nginx.conf](nginx/nginx.conf) is provided as a baseline for serving CodeIgniter and PHP in general.
-You may want to modify it as you need.
+You may want to modify it as you need:
+
+- Change `server_name` from `example.com` to the domain you intended to use.
+- Confirm that `root` points to the `/source/public` folder, where CodeIgniter should start form.
+  If NGINX and PHP-FPM are not being installed on the same device, 
+  you may want to make sure NGINX can access the source code inside the PHP-FPM.
+- Confirm that `fastcgi_pass` points to the PHP-FPM's address.
 
 ## Additional Notes
 
