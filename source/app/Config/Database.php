@@ -81,5 +81,21 @@ class Database extends Config
         if (ENVIRONMENT === 'testing') {
             $this->defaultGroup = 'tests';
         }
+
+        // assign the default database configuration from environment variables (if given)
+        $this->default['hostname'] = getenv('DB_DEFAULT_HOSTNAME') ?? $this->default['hostname'];
+        $this->default['username'] = getenv('DB_DEFAULT_USERNAME') ?? $this->default['username'];
+        $this->default['password'] = getenv('DB_DEFAULT_PASSWORD') ?? $this->default['password'];
+        $this->default['database'] = getenv('DB_DEFAULT_DATABASE') ?? $this->default['database'];
+        $this->default['DBDriver'] = getenv('DB_DEFAULT_DBDRIVER') ?? $this->default['DBDriver'];
+        $this->default['port'] = getenv('DB_DEFAULT_PORT') ?? $this->default['port'];
+
+        // assign the test database configuration from environment variables (if given)
+        $this->tests['hostname'] = getenv('DB_TESTS_HOSTNAME') ?? $this->tests['hostname'];
+        $this->tests['username'] = getenv('DB_TESTS_USERNAME') ?? $this->tests['username'];
+        $this->tests['password'] = getenv('DB_TESTS_PASSWORD') ?? $this->tests['password'];
+        $this->tests['database'] = getenv('DB_TESTS_DATABASE') ?? $this->tests['database'];
+        $this->tests['DBDriver'] = getenv('DB_TESTS_DBDRIVER') ?? $this->tests['DBDriver'];
+        $this->tests['port'] = getenv('DB_TESTS_PORT') ?? $this->tests['port'];
     }
 }
