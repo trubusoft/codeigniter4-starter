@@ -25,6 +25,25 @@ docker build -t my-application:1
 The source code will be copied inside the official [PHP-FPM Image](https://hub.docker.com/_/php).
 
 ### Passing environment variables
+
+Currently, there are 13 environment variables that can be adjusted:
+
+| Variable name       | Description                                              |
+|---------------------|----------------------------------------------------------| 
+| CI_ENVIRONMENT      | Environment for the site (`development` or `production`) |
+| DB_DEFAULT_HOSTNAME | Host name for the default database                       |
+| DB_DEFAULT_DATABASE | Name for the default database                            |
+| DB_DEFAULT_USERNAME | Username for the default database                        |
+| DB_DEFAULT_PASSWORD | Password for the default database                        |
+| DB_DEFAULT_DBDRIVER | DB Driver for the default database (`SQLite3`, `MySQLi`) |
+| DB_DEFAULT_PORT     | Port for the default database                            |
+| DB_TESTS_HOSTNAME   | Host name for the test database                          |
+| DB_TESTS_DATABASE   | Name for the test database                               |
+| DB_TESTS_USERNAME   | Username for the test database                           |
+| DB_TESTS_PASSWORD   | Password for the test database                           |
+| DB_TESTS_DBDRIVER   | DB Driver for the test database (`SQLite3`, `MySQLi`)    |
+| DB_TESTS_PORT       | Port for the default database                            |
+
 The `/source/.env` file will be ignored when creating the image.
 Please use the appropriate way from the stack you've picked to pass an environment variables.
 
@@ -35,13 +54,18 @@ services:
   fpm:
     environment:
       - CI_ENVIRONMENT=production
-      - database.default.hostname = 127.0.0.1
-      - database.default.database = main
-      - database.default.username = root
-      - database.default.password = root
-      - database.default.DBDriver = MySQLi
-      - database.default.DBPrefix =
-      - database.default.port = 3310
+      - DB_DEFAULT_HOSTNAME=db-main
+      - DB_DEFAULT_DATABASE=main
+      - DB_DEFAULT_USERNAME=root
+      - DB_DEFAULT_PASSWORD=root
+      - DB_DEFAULT_DBDRIVER=MySQLi
+      - DB_DEFAULT_PORT=3306
+      - DB_TESTS_HOSTNAME=db-test
+      - DB_TESTS_DATABASE=test
+      - DB_TESTS_USERNAME=root
+      - DB_TESTS_PASSWORD=root
+      - DB_TESTS_DBDRIVER=MySQLi
+      - DB_TESTS_PORT=3306
 ```
 
 In Kubernetes, insert them inside the specification and mix the usage with `ConfigMap` or `Secret` as necessary.
