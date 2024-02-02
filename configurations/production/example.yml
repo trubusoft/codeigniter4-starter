@@ -7,6 +7,15 @@ services:
     container_name: fpm
     build:
       context: ./source
+    environment:
+      - CI_ENVIRONMENT=production
+      - database.default.hostname = db-main
+      - database.default.database = main
+      - database.default.username = root
+      - database.default.password = root
+      - database.default.DBDriver = MySQLi
+      - database.default.DBPrefix =
+      - database.default.port = 3310
     volumes:
       - source-code:/var/www
   nginx:
