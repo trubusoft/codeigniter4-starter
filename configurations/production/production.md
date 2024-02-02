@@ -92,3 +92,9 @@ you may need to get it by:
 ```
 docker exec -ti fpm php-fpm -tt
 ```
+
+### Useful reference
+
+- https://github.com/atsanna/codeigniter4-docker
+- https://github.com/LERUfic/codeigniter-docker
+- https://github.com/firmanJS/Dockerize-Codeigniter-With-docker-compose
