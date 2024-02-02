@@ -68,7 +68,7 @@ services:
       - DB_TESTS_PORT=3306
 ```
 
-In Kubernetes, insert them inside the specification and mix the usage with `ConfigMap` or `Secret` as necessary.
+In Kubernetes, insert them inside the specification and mix its usage with `ConfigMap` or `Secret` as necessary.
 
 ## Preparing the NGINX
 
