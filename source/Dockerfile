@@ -15,9 +15,11 @@ RUN docker-php-ext-install intl
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-COPY . codeigniter4
-
+COPY composer.json codeigniter4/composer.json
+COPY composer.lock codeigniter4/composer.lock
 RUN cd codeigniter4 && composer install
+
+COPY . codeigniter4
 
 RUN chown -R www-data:www-data codeigniter4/
 RUN chmod -R 755 codeigniter4/writable/
