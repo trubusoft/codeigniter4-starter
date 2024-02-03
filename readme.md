@@ -1,6 +1,8 @@
 # Code Igniter 4 Starter Template
 
-Starter template for CodeIgniter 4.4.5 on Ubuntu 20.04 LTS
+Starter template for CodeIgniter 4.4.5 with docker development & production configuration.
+
+Tested for development & production on Ubuntu 20.04 LTS.
 
 ## Folder Structure
 
