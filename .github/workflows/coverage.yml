@@ -54,14 +54,14 @@ jobs:
         uses: dawidd6/action-delete-branch@v3
         with:
           github_token: ${{github.token}}
-          branches: coverage-data
+          branches: coverage-report
           soft_fail: true
 
       - name: Push coverage data to coverage branch
         uses: peaceiris/actions-gh-pages@v3
         with:
           publish_dir: ./source/build/logs
-          publish_branch: coverage-data
+          publish_branch: coverage-report
           github_token: ${{ secrets.GITHUB_TOKEN }}
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
