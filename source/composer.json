@@ -3,15 +3,21 @@
     "description": "CodeIgniter4 starter app",
     "license": "MIT",
     "type": "project",
-    "homepage": "https://codeigniter.com",
+    "homepage": "https://github.com/trubusoft/eprocurement",
+    "authors": [
+        {
+            "name": "Rahmat Nazali Salimi",
+            "email": "rahmatnazali95@gmail.com",
+            "homepage": "https://rahmatnazali.github.io",
+            "role": "Developer, Maintainer"
+        }
+    ],
     "support": {
-        "forum": "https://forum.codeigniter.com/",
-        "source": "https://github.com/codeigniter4/CodeIgniter4",
-        "slack": "https://codeigniterchat.slack.com"
+        "email": "rahmatnazali95@gmail.com"
     },
     "require": {
-        "php": "^7.4 || ^8.0",
-        "codeigniter4/framework": "^4.0"
+        "php": "^8.3",
+        "codeigniter4/framework": "^4.4.5"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9",
@@ -34,6 +40,17 @@
         "sort-packages": true
     },
     "scripts": {
-        "test": "phpunit"
+        "test": [
+            "@putenv XDEBUG_MODE=off",
+            "phpunit --color=always"
+        ],
+        "test-debug": [
+            "@putenv XDEBUG_MODE=off",
+            "phpunit --color=always --debug"
+        ],
+        "coverage": [
+            "@putenv XDEBUG_MODE=coverage",
+            "phpunit --color=always"
+        ]
     }
 }
