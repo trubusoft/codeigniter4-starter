@@ -3,6 +3,8 @@ name: PHP Composer
 on:
   push:
     branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 permissions:
   contents: write
@@ -49,6 +51,13 @@ jobs:
           report_type: clover
           coverage_badge_path: source/build/logs/coverage.svg
           push_badge: false
+
+      - name: Delete the old coverage branch
+        uses: dawidd6/action-delete-branch@v3
+        with:
+          github_token: ${{github.token}}
+          branches: coverage-data
+          soft_fail: true
 
       - name: Push coverage data to coverage branch
         uses: peaceiris/actions-gh-pages@v3
