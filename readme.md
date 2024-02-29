@@ -1,7 +1,7 @@
 # CodeIgniter 4 Starter Template
 
 ![Status Badge](https://github.com/trubusoft/codeigniter4-starter/actions/workflows/php.yml/badge.svg?branch-main)
-![Coverage Badge](https://github.com/trubusoft/codeigniter4-starter/blob/coverage-data/coverage.svg)
+![Coverage Badge](https://github.com/trubusoft/codeigniter4-starter/blob/coverage-report/coverage.svg)
 
 Starter template for CodeIgniter 4.4.5+ with:
 - Docker configuration for both development & production.
