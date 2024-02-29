@@ -16,6 +16,9 @@
             <directory suffix=".php">./app</directory>
         </include>
         <exclude>
+            <directory>./app/Config</directory>
+            <directory>./app/Language</directory>
+            <directory>./app/Database</directory>
             <directory suffix=".php">./app/Views</directory>
             <file>./app/Config/Routes.php</file>
         </exclude>
