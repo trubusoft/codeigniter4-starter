@@ -6,6 +6,18 @@ use CodeIgniter\Config\BaseConfig;
 
 class App extends BaseConfig
 {
+    public function __construct()
+    {
+        parent::__construct();
+
+        /**
+         * In Production, use HOST_NAME if provided instead of the default localhost:8080
+         */
+        if (getenv('BASE_URL')) {
+            $this->baseURL = getenv('BASE_URL');
+        }
+    }
+
     /**
      * --------------------------------------------------------------------------
      * Base Site URL
