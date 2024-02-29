@@ -8,14 +8,15 @@ services:
     build:
       context: ./source
     environment:
+      - BASE_URL=http://example.com/  # Don't forget to change this according to your project
       - CI_ENVIRONMENT=production
-      - DB_DEFAULT_HOSTNAME=db-main
+      - DB_DEFAULT_HOSTNAME=database
       - DB_DEFAULT_DATABASE=main
       - DB_DEFAULT_USERNAME=root
       - DB_DEFAULT_PASSWORD=root
       - DB_DEFAULT_DBDRIVER=MySQLi
       - DB_DEFAULT_PORT=3306
-      - DB_TESTS_HOSTNAME=db-test
+      - DB_TESTS_HOSTNAME=database
       - DB_TESTS_DATABASE=test
       - DB_TESTS_USERNAME=root
       - DB_TESTS_PASSWORD=root
@@ -23,6 +24,8 @@ services:
       - DB_TESTS_PORT=3306
     volumes:
       - source-code:/var/www
+    depends_on:
+      - database
   nginx:
     image: nginx:latest
     container_name: nginx
@@ -30,26 +33,19 @@ services:
       - ./configurations/production/nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
       - source-code:/var/www
     ports:
-      - "8000:80"
-  db-main:
-    image: mysql
+      - "80:80"
+    depends_on:
+      - php-fpm
+  database:
+    image: mysql:8.3.0
+    container_name: mysql
     volumes:
-      - main_mysql_data:/var/lib/mysql
+      - production_database:/var/lib/mysql
+      - ./configurations/production/mysql:/docker-entrypoint-initdb.d
     environment:
       - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=main
     ports:
       - "3310:3306"
-  db-test:
-    image: mysql
-    volumes:
-      - test_mysql_data:/var/lib/mysql
-    environment:
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=test
-    ports:
-      - "3311:3306"
 volumes:
-  main_mysql_data:
-  test_mysql_data:
+  production_database:
   source-code:
