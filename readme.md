@@ -35,6 +35,7 @@ php -v
 - `intl`: for CI4
 - `dom`: for PHPUnit
 - `mbstring`: for PHPUnit
+- `xdebug`: code coverage driver for PHPUnit
 
 ```
 sudo apt install php8.3-mysql
@@ -42,6 +43,7 @@ sudo apt install php8.3-curl
 sudo apt install php8.3-intl
 sudo apt install php8.3-dom
 sudo apt install php8.3-mbstring
+sudo apt install php8.3-xdebug
 ```
 
 Check that above modules exist by running `php -m`.
@@ -74,7 +76,7 @@ Try running the bare minimum settings now with:
 
 ```
 cd source
-./spark serve
+php spark serve
 ```
 
 A page should now be served at `http://localhost:8080/`.
@@ -102,7 +104,7 @@ docker compose up -d
 You can start the development session with the built-in `spark`:
 ```
 cd source
-./spark serve
+php spark serve
 ```
 
 The [bitnami/codeigniter](https://hub.docker.com/r/bitnami/codeigniter) image can also be used instead 
@@ -110,10 +112,22 @@ as an alternative to the `spark`.
 For this, please refer to [development_with_bitnami_image.md](configurations/development/bitnami/development_with_bitnami_image.md).
 
 ### Testing
+
+Run the tests with: 
+
 ```
 cd source
-composer run-script test
+composer test
 ```
+
+or generate coverage report with:
+
+```
+cd source
+composer coverage
+```
+
+Coverage report will be created at `/source/build/logs`.
 
 ### Debugging
 - Use the provided [Debug Toolbar](https://codeigniter4.github.io/userguide/tutorial/index.html#debug-toolbar)
