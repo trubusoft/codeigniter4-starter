@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="" tests="1" assertions="5" errors="0" warnings="0" failures="0" skipped="0" time="0.021509">
+    <testsuite name="App" tests="1" assertions="5" errors="0" warnings="0" failures="0" skipped="0" time="0.021509">
+      <testsuite name="App\Controllers\HomeControllerTest" file="/home/runner/work/codeigniter4-starter/codeigniter4-starter/source/tests/app/Controllers/HomeControllerTest.php" tests="1" assertions="5" errors="0" warnings="0" failures="0" skipped="0" time="0.021509">
+        <testcase name="testIndex" class="App\Controllers\HomeControllerTest" classname="App.Controllers.HomeControllerTest" file="/home/runner/work/codeigniter4-starter/codeigniter4-starter/source/tests/app/Controllers/HomeControllerTest.php" line="12" assertions="5" time="0.021509"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>
